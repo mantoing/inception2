@@ -24,6 +24,8 @@ services:
       - mariadb
     expose:
       - "9000"
+    env_file:
+      - .env
     networks:
       - inception_network
 
@@ -43,7 +45,7 @@ volumes:
      driver: local
      driver_opts:
        type: volume
-       device: /Users/jaeywon/incep/inception/srcs/req/volume
+       device: /Users/jaeywon/inception2/inception/srcs/req/volume
        o: bind
 
 networks:

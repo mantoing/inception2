@@ -7,6 +7,9 @@ RUN		apt-get update -y && \
 COPY	./tools/wordpress_setup.sh /tmp/wordpress_setup.sh
 COPY	./conf/www.conf /etc/php/7.4/fpm/pool.d/www.conf
 
+RUN			wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar && \
+			chmod +x wp-cli.phar && mv wp-cli.phar /usr/bin/wp
+
 
 WORKDIR	/var/www/html
 RUN		mkdir -p /run/php
