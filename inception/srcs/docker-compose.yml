@@ -35,19 +35,23 @@ services:
     restart: always
     expose:
       - "3306"
+    volumes:
+      - db_volume:/var/lib/mysql/
     env_file:
       - .env
     networks:
       - inception_network
       
 volumes:
+  db_volume:
   wp_volume:
      driver: local
      driver_opts:
-       type: volume
-       device: /Users/jaeywon/inception2/inception/srcs/req/volume
+       type: none
+       device: /Users/jaeywon/inception2/inception/srcs/req/volume/wordpress
        o: bind
 
 networks:
   inception_network:
     driver: bridge
+  # inception2_network:
