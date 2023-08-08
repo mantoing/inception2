@@ -6,7 +6,7 @@ RUN			apt-get update -y && \
 			mariadb-client \
 			vim
 
-# CMD			echo "\ndaemon off;" >> /etc/mysql/mariadb.cnf
+CMD			echo "\ndaemon off;" >> /etc/mysql/mariadb.cnf
 COPY		./sets/mariadb_setup.sh		/mariadb_setup.sh
 COPY		./conf/50-server.cnf		/etc/mysql/mariadb.conf.d/
 
