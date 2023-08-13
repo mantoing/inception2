@@ -44,14 +44,18 @@ services:
       
 volumes:
   db_volume:
+     driver: local
+     driver_opts:
+       type: none
+       device: /home/jaeywon/data/mariadb
+       o: bind
   wp_volume:
      driver: local
      driver_opts:
        type: none
-       device: /Users/jaeywon/inception2/inception/srcs/req/volume/wordpress
+       device: /home/jaeywon/data/wordpress
        o: bind
 
 networks:
   inception_network:
     driver: bridge
-  # inception2_network:
