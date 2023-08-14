@@ -2,7 +2,7 @@ version: "3"
 
 services:
   nginx:
-    build: req/nginx
+    build: requirements/nginx
     container_name: nginx
     ports:
       - 443:443
@@ -15,7 +15,7 @@ services:
       - inception_network
 
   wordpress:
-    build: req/wordpress
+    build: requirements/wordpress
     container_name: wordpress
     restart: always
     volumes:
@@ -30,7 +30,7 @@ services:
       - inception_network
 
   mariadb:
-    build: ./req/mariadb/
+    build: ./requirements/mariadb/
     container_name: mariadb
     restart: always
     expose:
