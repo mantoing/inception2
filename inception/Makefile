@@ -1,7 +1,6 @@
 NAME = inception
 
 VOLUME_PATH		:= /home/jaeywon/data
-# HOST_LINK	:= "127.0.0.1	jaeywon.42.fr" > /etc/hosts
 
 all		:	$(NAME)
 
